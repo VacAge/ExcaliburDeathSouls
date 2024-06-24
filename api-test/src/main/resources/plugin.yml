@@ -2,6 +2,6 @@ name: DeadSoulsApiTest
 version: '1.0'
 api-version: '1.13'
 main: com.darkyen.minecraft.DeadSoulsApiTest
-authors: [Darkyen]
+authors: [Darkyen, VacAge]
 softdepend:
   - DeadSouls

@@ -297,12 +297,12 @@ final class SoulDatabase {
         final Soul soul = getSoulById(soulId);
 
         if (soul == null) {
-            sender.sendMessage(ChatColor.AQUA+"This soul does not need freeing");
+            sender.sendMessage(ChatColor.AQUA+"Эта душа не может быть освобождена");
             return;
         }
 
         if (soul.owner == null) {
-            sender.sendMessage(ChatColor.AQUA+"This soul is already free");
+            sender.sendMessage(ChatColor.AQUA+"Эта душа уже свободна");
             return;
         }
 
@@ -310,20 +310,20 @@ final class SoulDatabase {
             final boolean ownSoul = soul.isOwnedBy(sender);
             if (ownSoul) {
                 if (!canFreeOwn) {
-                    sender.sendMessage(ChatColor.AQUA + "You cannot free your own soul");
+                    sender.sendMessage(ChatColor.AQUA + "Ты не можешь освободить свою собственную душу");
                     return;
                 }
             } else {
-                sender.sendMessage(ChatColor.AQUA + "This soul is not yours to free");
+                sender.sendMessage(ChatColor.AQUA + "Эта душа не твоя, и ты не можешь ее освободить");
                 return;
             }
         }
 
         if (soul.freeSoul(System.currentTimeMillis(), soulFreeAfterMs)) {
-            sender.sendMessage(ChatColor.AQUA+"Soul has been set free");
+            sender.sendMessage(ChatColor.AQUA+"Душа была освобождена");
             dirty = true;
         } else {
-            sender.sendMessage(ChatColor.AQUA+"This soul is already free");
+            sender.sendMessage(ChatColor.AQUA+"Эта душа уже свободна");
         }
     }
 

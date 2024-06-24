@@ -1,8 +1,8 @@
 name: DeadSouls
-version: '1.7'
+version: '1.8'
 api-version: '1.13'
 main: com.darkyen.minecraft.DeadSouls
-authors: [Darkyen]
+authors: [Darkyen, VacAge]
 commands:
   souls:
     description: View and manipulate souls
